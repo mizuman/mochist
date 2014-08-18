@@ -29,12 +29,14 @@ class Tasks
     task = {num: @nextTaskNum(), task: taskString}
     @cache.push task
     @robot.brain.data.tasks = @cache
+    @robot.brain.save()
     task
   all: -> @cache
   deleteByNumber: (num) ->
     index = @cache.map((n) -> n.num).indexOf(parseInt(num))
     task = @cache.splice(index, 1)[0]
     @robot.brain.data.tasks = @cache
+    @robot.brain.save()
     task
 
 module.exports = (robot) ->
