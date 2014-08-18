@@ -12,7 +12,7 @@ module.exports = (robot) ->
 		robot.send envelope, '''
 		今週もお疲れさまです。
 		週報書いてね
-		https://webcore.ft.nttcloud.net/redmine/projects/teirei/wiki
+		あ、まだ戦略部門用のredmineがなかった。
 		'''
 	)
 	cronjob_weeklyreport.start()
