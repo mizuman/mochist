@@ -7,12 +7,12 @@ module.exports = (robot) ->
 	)
 	cronjob.start()
 
-	cronjob_weeklyreport = new cronJob('00 00 9 * * 5', () =>
+	cronjob_weeklyreport = new cronJob('00 00 9 * * 3', () =>
 		envelope = room: "#general"
 		robot.send envelope, '''
 		今週もお疲れさまです。
 		週報書いてね
-		あ、まだ戦略部門用のredmineがなかった。
+		https://webcore.ft.nttcloud.net/redmine/projects/tech-strategy/wiki/定例MTG
 		'''
 	)
 	cronjob_weeklyreport.start()
