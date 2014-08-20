@@ -7,6 +7,18 @@ module.exports = (robot) ->
 	)
 	cronjob.start()
 
+	cronjob = new cronJob('00 00 10 * * 1-5', () =>
+		envelope = room: "#post"
+		robot.send envelope, "私送便の到着時間だよ。誰か見に行った？"
+	)
+	cronjob.start()
+
+	cronjob = new cronJob('00 00 15 * * 1-5', () =>
+		envelope = room: "#post"
+		robot.send envelope, "私送便の到着時間だよ。誰か見に行った？"
+	)
+	cronjob.start()
+
 	cronjob_weeklyreport = new cronJob('00 00 9 * * 3', () =>
 		envelope = room: "#general"
 		robot.send envelope, '''
