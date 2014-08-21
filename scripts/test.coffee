@@ -13,7 +13,7 @@ module.exports = (robot) ->
 	)
 	cronjob_post_am.start()
 
-	cronjob_post_pm = new cronJob('00 00 10 * * 1-5', () =>
+	cronjob_post_pm = new cronJob('00 00 15 * * 1-5', () =>
 		envelope = room: "#post"
 		robot.send envelope, "私送便の到着時間だよ。誰か見に行った？"
 	)
