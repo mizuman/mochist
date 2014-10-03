@@ -5,7 +5,7 @@ module.exports = (robot) ->
 		envelope = room: "#random"
 		robot.send envelope, "(´º﹃º｀) はらへ"
 	)
-	cronjob.start()
+	# cronjob.start()
 
 	cronjob_post_am = new cronJob('00 00 10 * * 1-5', () =>
 		envelope = room: "#post"
